@@ -3,7 +3,7 @@
 Plugin Name: WP About Author
 Plugin URI: http://www.jonbishop.com/downloads/wordpress-plugins/wp-about-author/
 Description: Easily display customizable author bios below your posts
-Version: 1.3
+Version: 1.4
 Author: Jon Bishop
 Author URI: http://www.jonbishop.com
 License: GPL2

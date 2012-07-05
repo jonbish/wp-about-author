@@ -4,7 +4,7 @@ Donate link: http://www.jonbishop.com/donate/
 Tags: author, author bio, author box, post, widget, bio, twitter, facebook, about, about author
 Requires at least: 3.0
 Tested up to: 3.3.1
-Stable tag: 1.3
+Stable tag: 1.4
 
 Easily display customizable author bios below your posts
 
@@ -103,7 +103,9 @@ wp_about_author_separator - Change the separator displayed between text links
 
 == Changelog ==
 
-The current version is 1.3 (2012.2.23)
+The current version is 1.4 (2012.7.5)
+
+= 1.4 (2012.7.5) =
 
 = 1.3 (2012.2.23) =
 * Added social media icons as an alternative to text links
