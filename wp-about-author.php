@@ -3,7 +3,7 @@
 Plugin Name: WP About Author
 Plugin URI: http://www.jonbishop.com/downloads/wordpress-plugins/wp-about-author/
 Description: Easily display customizable author bios below your posts
-Version: 1.4
+Version: 1.3
 Author: Jon Bishop
 Author URI: http://www.jonbishop.com
 License: GPL2
@@ -89,22 +89,24 @@ function wp_about_author_display($for_feed = false){
 // Add buttons to page
 function insert_wp_about_author($content) {
 	$wp_about_author_settings=wp_about_author_get_options();
-	
-        if(is_front_page() && isset($wp_about_author_settings['wp_author_display_front']) && $wp_about_author_settings['wp_author_display_front']){
-		$content.=wp_about_author_display();
-	} else if(is_archive() && isset($wp_about_author_settings['wp_author_display_archives']) && $wp_about_author_settings['wp_author_display_archives']){
-		$content.=wp_about_author_display();
-	} else if(is_search() && isset($wp_about_author_settings['wp_author_display_search']) && $wp_about_author_settings['wp_author_display_search']){
-		$content.=wp_about_author_display();
-	} else if(is_page() && isset($wp_about_author_settings['wp_author_display_pages']) && $wp_about_author_settings['wp_author_display_pages']){
-		$content.=wp_about_author_display();
-	} else if(is_single() && isset($wp_about_author_settings['wp_author_display_posts']) && $wp_about_author_settings['wp_author_display_posts']){
-		$content.=wp_about_author_display();
-        } else if(is_feed() && isset($wp_about_author_settings['wp_author_display_feed']) && $wp_about_author_settings['wp_author_display_feed']){
-		$content.=wp_about_author_display(true);
-	} else {
-		$content=$content;	
-	}
+	if (in_the_loop()) {
+            if(is_front_page() && isset($wp_about_author_settings['wp_author_display_front']) && $wp_about_author_settings['wp_author_display_front']){
+                    $content.=wp_about_author_display();
+            } else if(is_archive() && isset($wp_about_author_settings['wp_author_display_archives']) && $wp_about_author_settings['wp_author_display_archives']){
+                    $content.=wp_about_author_display();
+            } else if(is_search() && isset($wp_about_author_settings['wp_author_display_search']) && $wp_about_author_settings['wp_author_display_search']){
+                    $content.=wp_about_author_display();
+            } else if(is_page() && isset($wp_about_author_settings['wp_author_display_pages']) && $wp_about_author_settings['wp_author_display_pages']){
+                    $content.=wp_about_author_display();
+            } else if(is_single() && isset($wp_about_author_settings['wp_author_display_posts']) && $wp_about_author_settings['wp_author_display_posts']){
+                    $content.=wp_about_author_display();
+            } else if(is_feed() && isset($wp_about_author_settings['wp_author_display_feed']) && $wp_about_author_settings['wp_author_display_feed']){
+                    $content.=wp_about_author_display(true);
+            } else {
+                    $content=$content;	
+            }
+            remove_filter( 'the_content', 'insert_wp_about_author' );
+        }
 	return $content;
 }
 
