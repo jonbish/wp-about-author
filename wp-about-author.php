@@ -142,6 +142,7 @@ function wp_about_author_get_socials() {
         $socials['yelp'] = array('title'=>'Yelp', 'link'=>'http://www.yelp.com/user_details?userid=%%username%%', 'icon'=> WPAUTHORURL_URL .'/images/yelp.png');
         $socials['reddit'] = array('title'=>'Reddit', 'link'=>'http://www.reddit.com/user/%%username%%', 'icon'=> WPAUTHORURL_URL .'/images/reddit.png');
         $socials['delicious'] = array('title'=>'Delicious', 'link'=>'http://www.delicious.com/%%username%%', 'icon'=> WPAUTHORURL_URL .'/images/delicious.png');
+        $socials['weibo'] = array('title'=>'Weibo', 'link'=>'http://www.weibo.com/%%username%%', 'icon'=> WPAUTHORURL_URL .'/images/weibo.png');
         return apply_filters( 'wp_about_author_get_socials', $socials );
 }
 
